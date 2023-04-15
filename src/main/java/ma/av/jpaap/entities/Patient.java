@@ -11,7 +11,7 @@ import java.util.Date;
 public class Patient {
    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-   @Column(name = "NOM", length = 50)
+   @Column(name = "NOM", length = 80 )
     private String nom;
     @Temporal(TemporalType.DATE)
     private Date dateNaissance;
