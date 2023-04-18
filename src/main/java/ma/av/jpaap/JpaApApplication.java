@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 
 import java.util.Date;
 import java.util.List;
@@ -20,15 +22,26 @@ public class JpaApApplication implements CommandLineRunner  {
 
     @Override
     public void run(String... args) throws Exception {
-        patientRepository.save(
+        /*patientRepository.save(
                 new Patient(null,"Youssra",new Date(),false, 56));
         patientRepository.save(
                 new Patient(null,"Kawtar",new Date(),false, 100));
         patientRepository.save(
                 new Patient(null,"Hassan",new Date(),true, 76));
+    */
 
-        List<Patient> patients = patientRepository.findAll();
-        patients.forEach(p->{
+        for (int i=0; i<100;i++){
+            patientRepository.save(
+            new Patient(null,"Kawtar",new Date(),false,(int)(Math.random()*100)));
+        }
+        //List<Patient> patients = patientRepository.findAll();
+
+        Page<Patient> patients = patientRepository.findAll(PageRequest.of(1,5));// la pagination
+        System.out.println("Totale pages: " + patients.getTotalPages());
+        System.out.println("Total elements: "+patients.getTotalElements());
+        System.out.println("Numero page: "+patients.getNumber());
+        List<Patient> content = patients.getContent();//list de patients de cette page
+        content.forEach(p->{
             System.out.println("==============================");
             System.out.println(p.getId());
             System.out.println(p.getNom());
@@ -38,6 +51,15 @@ public class JpaApApplication implements CommandLineRunner  {
 
         });
 
-
+        System.out.println("********************************");
+        Patient patient = patientRepository.findById(1L).orElse(null);
+        if(patient!=null){
+            System.out.println(patient.getNom());
+            System.out.println(patient.isMalade());
+        }
+        patient.setScore(870);
+        patientRepository.save(patient);
+        //System.out.println(patient.getScore());
+        patientRepository.deleteById(1L);
     }
 }
