@@ -63,9 +63,5 @@ public class JpaApApplication implements CommandLineRunner {
             System.out.println(patient.getNom());
             System.out.println(patient.isMalade());
         }
-        patient.setScore(870);
-        patientRepository.save(patient);
-        System.out.println(patient.getScore());
-        patientRepository.deleteById(1L);
     }
 }
