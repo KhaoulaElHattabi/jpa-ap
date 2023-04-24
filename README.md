@@ -35,7 +35,7 @@ JPA-AP est une application Spring Boot pour explorer l'acces aux données.
 <img src="https://user-images.githubusercontent.com/92638641/234084480-89b94d30-8f2d-47f7-b4f6-c04c0eb97837.png"/>
 </p>
       <br>
--  La pagination et la recherche des patients :<br>
+-  La pagination et afficher nombre des pages, des elements et des spring data donne les methodes de base (save, delete, get = pour print) qui se trouve dans JpaApplication :<br>
    <p align="center">
 <img src="https://user-images.githubusercontent.com/92638641/234086001-f3a17a7f-6613-4f21-a048-8507c5b21f8f.png"/>
 </p>
