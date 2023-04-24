@@ -1,6 +1,6 @@
 ## Activité pratique N°2 : JPA Hibernate, Spring Data
 
-<div>
+
 JPA-AP est une application Spring Boot pour explorer l'acces aux données.
 - On a commencé l'activité par la création d'un projet spring en ajoutant les dependance : Lombok, Spring Data, Spring Web et H2 database (comme base de données initiale)
 - La declaration d'une entité JPA "Patients" qui presente une table dans la base de données en utilisation des annotations du Lombok.
@@ -39,4 +39,3 @@ JPA-AP est une application Spring Boot pour explorer l'acces aux données.
    <p align="center">
 <img src="https://user-images.githubusercontent.com/92638641/234086001-f3a17a7f-6613-4f21-a048-8507c5b21f8f.png"/>
 </p>
-</div>
