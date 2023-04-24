@@ -24,18 +24,29 @@ JPA-AP est une application Spring Boot pour explorer l'acces aux données.
 <img src="https://user-images.githubusercontent.com/92638641/234076967-aec68f29-fdea-4f3f-a6d4-72d949521b61.png"/>
 </p>
 
--  la classe JpaApplication est la classe principale de spring boot application avec l'annotation @SpringBootApplication  qui contient les annotations suivantes:  @Configuration @EnableAutoConfiguration @ComponentScan. Aussi cette classe va contient instance de l'interface PatientRepository avec l'annotation @Autowired (chercher le bean specifié)
+- La classe JpaApplication est la classe principale de spring boot application avec l'annotation @SpringBootApplication  qui contient les annotations suivantes:  @Configuration @EnableAutoConfiguration @ComponentScan. Aussi cette classe va contient instance de l'interface PatientRepository avec l'annotation @Autowired (chercher le bean specifié)
 <p align="center">
 <img src="https://user-images.githubusercontent.com/92638641/234084230-eff1e6ed-913e-482f-88c5-1feb7e142934.png"/>
 </p>
 - Ensuite on a testé quelques operations sur les données par les methodes deja implementées dans m'interface PatientRepository en utilisant aussi des methodes prédefinis par Spring Framework dans la classe JpaRepository comme: <br>
    <br>
--  Ajout des patients :<br>
+- Ajout des patients :<br>
    <p align="center">
 <img src="https://user-images.githubusercontent.com/92638641/234084480-89b94d30-8f2d-47f7-b4f6-c04c0eb97837.png"/>
 </p>
       <br>
--  La pagination et afficher nombre des pages, des elements et des spring data donne les methodes de base (save, delete, get = pour print) qui se trouve dans JpaApplication :<br>
+- La pagination et afficher nombre des pages, des elements et des spring data donne les methodes de base (save, delete, get = pour print) qui se trouve dans JpaApplication :<br>
    <p align="center">
 <img src="https://user-images.githubusercontent.com/92638641/234086001-f3a17a7f-6613-4f21-a048-8507c5b21f8f.png"/>
 </p>
+- Et finalement on a basculer de H2 database vers MySQL en ajouter la dependans mysql.connector.j dans le fichier (pom.xml) et faire des modifications sur le fichier application.properties.
+<p align="center">
+<img src="https://user-images.githubusercontent.com/92638641/234088153-23c7e058-7c83-4376-b229-ccf611a19f1d.png"/>
+</p>
+- Les données dans la base de données.
+<p align="center">
+<img src="https://user-images.githubusercontent.com/92638641/234088550-c80cf6f2-b0ec-43c6-b1b8-65ff44526dea.png"/>
+
+</p>
+
+
